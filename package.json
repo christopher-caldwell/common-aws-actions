@@ -1,0 +1,59 @@
+{
+  "name": "@caldwell619/common-aws-actions",
+  "version": "0.0.1",
+  "description": "Collection of commonly performed actions in the AWS environments",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "format": "prettier --write src/**/*.ts",
+    "lint": "eslint src/ --ext .js,.ts",
+    "test": "jest --config jest.config.js",
+    "type-check": "tsc --noEmit",
+    "build": "microbundle --compress --target node",
+    "release": "standard-version",
+    "publish-release": "git push --follow-tags origin master && yarn publish",
+    "deploy": "sh scripts/publish.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:christopher-caldwell/common-aws-actions.git"
+  },
+  "bugs": {
+    "url": "https://github.com/christopher-caldwell/common-aws-actions/issues"
+  },
+  "peerDependencies": {
+    "aws-sdk": "^2.683.0"
+  },
+  "optionalDependencies": {
+    "jsonwebtoken": "^8.5.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "aws",
+    "helper",
+    "s3",
+    "dynamo",
+    "secrets"
+  ],
+  "author": "u/christopher-caldwell",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/node": "^14.0.5",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "aws-sdk": "^2.683.0",
+    "eslint": "^7.20.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "microbundle": "^0.13.0",
+    "prettier": "^2.0.5",
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "array-chop": "^1.0.1"
+  }
+}

@@ -5,7 +5,10 @@ A collection of commonly used actions in the AWS environments for Music Lab
 <p align="center">
   <h4/>
   <img src="https://img.shields.io/badge/types-TypeScript%20v4.1.5-blue">
-  <img src="https://img.shields.io/badge/npm-v0.0.1-red">
+  <img src="https://img.shields.io/npm/v/@caldwell619/common-aws-actions">
+  <img src="https://img.shields.io/bundlephobia/min/@caldwell619/common-aws-actions">
+  <img src="https://img.shields.io/github/last-commit/christopher-caldwell/common-aws-actions">
+  <img src="https://img.shields.io/npm/types/@caldwell619/common-aws-actions">
 </p>
 
 

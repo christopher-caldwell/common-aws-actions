@@ -9,7 +9,7 @@ You need to provide the entire key, meaning the partition and the range key exac
 ## Usage
 
 ```ts
-import { get, Key } from '@ihm-software/music-lab.common-aws-actions'
+import { get, Key } from '@caldwell619/common-aws-actions'
 
 // This key is the Primary Key of your Dynamo record. `partitionKeyName` is used as a placeholder, this will be whatever you set your table up with.
 const params: Key = {

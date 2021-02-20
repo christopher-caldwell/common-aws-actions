@@ -9,7 +9,7 @@ With query, you do not need to provide the entire key, only an exact match of th
 ## Usage
 
 ```ts
-import { queryItem, Key } from '@ihm-software/music-lab.common-aws-actions'
+import { queryItem, Key } from '@caldwell619/common-aws-actions'
 
 const params: Key = {
   partitionKeyName: '',

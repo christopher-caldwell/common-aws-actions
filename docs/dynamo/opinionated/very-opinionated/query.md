@@ -7,7 +7,7 @@ An opinionated wrapper around `query`. This function assumes you have set the en
 ## Usage
 
 ```ts
-import { query, DynamoQueryOptions } from '@ihm-software/music-lab.common-aws-actions'
+import { query, DynamoQueryOptions } from '@caldwell619/common-aws-actions'
 
 interface ExpectedReturnType {
   somethingCool: string

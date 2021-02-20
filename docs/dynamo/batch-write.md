@@ -9,7 +9,7 @@ These can be either `put` or `delete` requests. Max is a batch of 20, your array
 ## Usage
 
 ```ts
-import { batchWrite, IndividualBatchArg } from '@ihm-software/music-lab.common-aws-actions'
+import { batchWrite, IndividualBatchArg } from '@caldwell619/common-aws-actions'
 
 const operations: IndividualBatchArg[] = [
   {

@@ -1,6 +1,6 @@
 # Common AWS Actions
 
-A collection of commonly used actions in the AWS environments for Music Lab
+A collection of commonly used actions in the AWS environments
 
 <p align="center">
   <h4/>
@@ -17,10 +17,10 @@ Before running the install command, you will need to [authenticate](../docs/READ
 
 ```bash
 # Yarn
-yarn add @ihm-software/music-lab.common-aws-actions
+yarn add @caldwell619/common-aws-actions
 
 # NPM
-npm install --save @ihm-software/music-lab.common-aws-actions
+npm install --save @caldwell619/common-aws-actions
 ```
 
 ## Detailed Overview

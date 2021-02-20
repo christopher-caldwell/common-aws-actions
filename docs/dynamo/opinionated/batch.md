@@ -7,7 +7,7 @@ Performs operations in batches of 20. You can pass an array of any length, and i
 ## Usage
 
 ```ts
-import { handleBatchWrite } from '@ihm-software/music-lab.common-aws-actions'
+import { handleBatchWrite } from '@caldwell619/common-aws-actions'
 
 const itemsToWrite = [
   {

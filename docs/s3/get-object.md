@@ -7,7 +7,7 @@ Gets an object stored in an S3 bucket
 ## Usage
 
 ```ts
-import { getObject, GetObjectRequest } from '@ihm-software/music-lab.common-aws-actions/dist/s3/get-object'
+import { getObject, GetObjectRequest } from '@caldwell619/common-aws-actions/dist/s3/get-object'
 
 const params: GetObjectRequest = {
   Bucket: '',

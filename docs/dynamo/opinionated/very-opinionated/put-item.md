@@ -8,7 +8,7 @@ Optionally, you can provide the designated partition key and range key values, w
 ## Usage
 
 ```ts
-import { putItem } from '@ihm-software/music-lab.common-aws-actions'
+import { putItem } from '@caldwell619/common-aws-actions'
 
 const anythingYouWantToStore = {
     partition: '123',
@@ -35,7 +35,7 @@ In the following example, we are overwriting the keys inside of `anythingYouWant
 This can be useful when at the time of creating the object, the value of the keys may not be available.
 
 ```ts
-import { putItem } from '@ihm-software/music-lab.common-aws-actions'
+import { putItem } from '@caldwell619/common-aws-actions'
 
 const anythingYouWantToStore = {
     partition: '123',

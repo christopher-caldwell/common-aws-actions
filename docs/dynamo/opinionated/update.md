@@ -7,7 +7,7 @@ This is a simplified version of [update item](../update-item.md), that makes the
 ## Usage
 
 ```ts
-import { updateItem, UpdateItemArgs } from '@ihm-software/music-lab.common-aws-actions'
+import { updateItem, UpdateItemArgs } from '@caldwell619/common-aws-actions'
 
 const updateConfig: UpdateItemArgs = {
   propertyToUpdate: 'price',

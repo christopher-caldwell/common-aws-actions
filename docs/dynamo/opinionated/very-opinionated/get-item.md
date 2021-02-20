@@ -9,7 +9,7 @@ I have not needed to `get` with only a partition key, so the range key is requir
 ## Usage
 
 ```ts
-import { getItem, Key } from '@ihm-software/music-lab.common-aws-actions'
+import { getItem, Key } from '@caldwell619/common-aws-actions'
 
 const itemIAmLookingFor = await get('partitionKeyValue', 'rangeKeyValue')
 ```

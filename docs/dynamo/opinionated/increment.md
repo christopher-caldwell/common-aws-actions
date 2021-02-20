@@ -7,7 +7,7 @@ A wrapper around `query`
 ## Usage
 
 ```ts
-import { simpleIncrementItemProperty, IncrementValueArgs } from '@ihm-software/music-lab.common-aws-actions'
+import { simpleIncrementItemProperty, IncrementValueArgs } from '@caldwell619/common-aws-actions'
 
 const options: IncrementValueArgs = {
   propertyToUpdate: 'count',

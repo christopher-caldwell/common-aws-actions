@@ -9,7 +9,7 @@ When an item is written to Dynamo, it overwinters the previous key. There is not
 ## Usage
 
 ```ts
-import { basicPutItem } from '@ihm-software/music-lab.common-aws-actions'
+import { basicPutItem } from '@caldwell619/common-aws-actions'
 
 const item = {
   anythingYouWant: 123,

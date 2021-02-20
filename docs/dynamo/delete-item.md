@@ -10,7 +10,7 @@ This makes deleting large amounts of items from Dynamo potentially expensive. Ju
 ## Usage
 
 ```ts
-import { deleteItem, Key } from '@ihm-software/music-lab.common-aws-actions'
+import { deleteItem, Key } from '@caldwell619/common-aws-actions'
 
 // This key is the Primary Key of your Dynamo record. `partitionKeyName` is used as a placeholder, this will be whatever you set your table up with.
 const params: Key = {

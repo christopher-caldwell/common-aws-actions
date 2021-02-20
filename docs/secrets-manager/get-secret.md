@@ -7,7 +7,7 @@ Gets the metadata of an object stored in an S3 bucket
 ## Usage
 
 ```ts
-import { getSecret, SecretsParams } from '@ihm-software/music-lab.common-aws-actions/dist/secrets-manager/get-secret'
+import { getSecret, SecretsParams } from '@caldwell619/common-aws-actions/dist/secrets-manager/get-secret'
 
 interface ExpectedSecret {
   key: string
@@ -38,7 +38,7 @@ This can be used when you only need one secret out of the lot. The argument is a
 import {
   extractSecretOutOfSecrets,
   ExtractSecretArgs,
-} from '@ihm-software/music-lab.common-aws-actions/dist/secrets-manager/get-secret'
+} from '@caldwell619/common-aws-actions/dist/secrets-manager/get-secret'
 
 const params: SecretsParams = {
   SecretId: '',

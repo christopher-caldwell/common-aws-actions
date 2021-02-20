@@ -11,7 +11,7 @@ Updating an object is challenging. If you do not have experience doing so, I rec
 ## Usage
 
 ```ts
-import { basicUpdateItem, UpdateItemInput } from '@ihm-software/music-lab.common-aws-actions'
+import { basicUpdateItem, UpdateItemInput } from '@caldwell619/common-aws-actions'
 
 const params: UpdateItemInput = {
   TableName: 'table',

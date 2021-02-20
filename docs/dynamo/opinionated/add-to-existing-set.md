@@ -9,7 +9,7 @@ The property storing the array must be at the root level of the record. This fun
 ## Usage
 
 ```ts
-import { addToItemSet, AddToSetArgs } from '@ihm-software/music-lab.common-aws-actions'
+import { addToItemSet, AddToSetArgs } from '@caldwell619/common-aws-actions'
 
 const args: AddToSetArgs = {
   propertyToUpdate: 'items',

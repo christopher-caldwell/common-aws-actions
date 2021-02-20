@@ -9,7 +9,7 @@ This is useful for changing primary keys. You cannot update a primary key, it ha
 ## Usage
 
 ```ts
-import { transactWrite, Operation } from '@ihm-software/music-lab.common-aws-actions'
+import { transactWrite, Operation } from '@caldwell619/common-aws-actions'
 
 const operations: Operation[] = [
   {

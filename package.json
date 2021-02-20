@@ -1,16 +1,16 @@
 {
   "name": "@caldwell619/common-aws-actions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Collection of commonly performed actions in the AWS environments",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
+  "module": "dist/index.js",
   "source": "src/index.ts",
   "scripts": {
     "format": "prettier --write src/**/*.ts",
     "lint": "eslint src/ --ext .js,.ts",
     "test": "jest --config jest.config.js",
     "type-check": "tsc --noEmit",
-    "build": "microbundle --compress --target node --external jsonwebtoken",
+    "build": "microbundle --compress --target node --external jsonwebtoken --no-sourcemap --format es",
     "release": "standard-version",
     "publish-release": "git push --follow-tags origin master && yarn publish",
     "deploy": "sh scripts/publish.sh"

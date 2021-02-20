@@ -13,8 +13,6 @@ A collection of commonly used actions in the AWS environments
 
 ## Installation
 
-Before running the install command, you will need to [authenticate](../docs/README.md) with the private registry.
-
 ```bash
 # Yarn
 yarn add @caldwell619/common-aws-actions

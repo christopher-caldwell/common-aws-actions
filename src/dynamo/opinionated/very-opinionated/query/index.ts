@@ -16,12 +16,15 @@ export interface DynamoQueryOptions {
  *
  * This function will throw an error if `Items` is undefined. Will not throw an error if the set is empty, `[]`
  */
-export const query = async <ReturnType extends ItemList>({
-  partitionKeySearchTerm,
-  rangeKeySearchTerm,
-  rangeKeyComparisonOperator = 'BEGINS_WITH',
-  indexToQuery,
-}: DynamoQueryOptions): Promise<ReturnType> => {
+export const query = async <ReturnType extends ItemList>(
+  {
+    partitionKeySearchTerm,
+    rangeKeySearchTerm,
+    rangeKeyComparisonOperator = 'BEGINS_WITH',
+    indexToQuery,
+  }: DynamoQueryOptions,
+  shouldLogParams?: boolean
+): Promise<ReturnType> => {
   validateEnv()
   const params: SearchConfig = {
     tableName: tableName,
@@ -36,7 +39,7 @@ export const query = async <ReturnType extends ItemList>({
 
   if (indexToQuery) params.indexToQuery = indexToQuery
 
-  const items = await queryItem<ReturnType>(params, false)
+  const items = await queryItem<ReturnType>(params, false, shouldLogParams)
   if (items) return items as ReturnType
   else throw new Error('No items found')
 }

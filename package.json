@@ -1,6 +1,6 @@
 {
   "name": "@caldwell619/common-aws-actions",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Collection of commonly performed actions in the AWS environments",
   "main": "dist/index.js",
   "module": "dist/index.js",

@@ -1,7 +1,15 @@
 import { AllowableComparisonOperators, ItemList, SearchConfig } from '@/dynamo/query/interfaces'
 import { queryItem } from '@/dynamo/query'
 
-import { tableName, partitionKeyName, rangeKeyName, validateEnv } from '@/dynamo/opinionated/shared'
+import {
+  tableName,
+  partitionKeyName,
+  rangeKeyName,
+  validateEnv,
+  validateGsiUsage,
+  gsiPartitionKeyName,
+  gsiRangeKeyName,
+} from '@/dynamo/opinionated/shared'
 
 export interface DynamoQueryOptions {
   partitionKeySearchTerm: string
@@ -31,13 +39,21 @@ export const query = async <ReturnType extends ItemList>(
     partitionKeyName,
     partitionKeySearchTerm,
   }
+
   if (rangeKeySearchTerm) {
     params.rangeKeyName = rangeKeyName
     params.rangeKeySearchTerm = rangeKeySearchTerm
     params.rangeKeyComparisonOperator = rangeKeyComparisonOperator
   }
 
-  if (indexToQuery) params.indexToQuery = indexToQuery
+  // Using a GSI, need to change the names of the keys
+  if (indexToQuery) {
+    validateGsiUsage()
+    params.partitionKeyName = gsiPartitionKeyName
+    params.indexToQuery = indexToQuery
+
+    if (rangeKeySearchTerm) params.rangeKeyName = gsiRangeKeyName
+  }
 
   const items = await queryItem<ReturnType>(params, false, shouldLogParams)
   if (items) return items as ReturnType

@@ -9,3 +9,9 @@ export const capitalizeWord = (wordToCapitalize: string): string => {
 
 export const checkIfObjectHasLength = <T = Record<string, unknown>>(objectToCompare?: T): boolean =>
   objectToCompare ? !!Object.keys(objectToCompare).length : false
+
+
+export const bodyParser = <T>(body: string | T): T => {
+  if (typeof body === 'string') return JSON.parse(body)
+  return body
+}

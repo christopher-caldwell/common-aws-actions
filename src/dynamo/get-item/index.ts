@@ -1,4 +1,5 @@
 import { Key, AttributeMap, DocClient } from '@/dynamo/shared'
+import { SpecificError } from '@/utils/errorHandling'
 
 import { GetItemInput } from './interfaces'
 
@@ -17,7 +18,13 @@ export const get = async <Result extends AttributeMap>(
   const dynamoResponse = await DocClient.get(params).promise()
   if (dynamoResponse.Item) return dynamoResponse.Item as Result
 
-  if (shouldThrowErrorOnNoResult) throw new Error('Requested item was not found')
+  if (shouldThrowErrorOnNoResult) {
+    throw new SpecificError({
+      name: 'ItemNotFound',
+      statusCode: 404,
+      message: 'Requested item was not found',
+    })
+  }
   return dynamoResponse.Item
 }
 

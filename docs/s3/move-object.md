@@ -23,10 +23,11 @@ await moveObject('my-awesome-bucket', 'pending/file.csv', 'success/file.csv')
 
 ## Move Object Options
 
-| Name                    | Type      | Required? | Description                                                                   |
-| ----------------------- | --------- | :-------: | ----------------------------------------------------------------------------- |
-| `destinationBucketName` | `string`  |    :x:    | If you are moving objects across buckets, provide the destination bucket name |
-| `keepOriginalObject`    | `boolean` |    :x:    | If you wish to preserve the source object. Default behavior is to delete.     |
+| Name                    | Type                                                                                                                         | Required? | Description                                                                   |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- | :-------: | ----------------------------------------------------------------------------- |
+| `destinationBucketName` | `string`                                                                                                                     |    :x:    | If you are moving objects across buckets, provide the destination bucket name |
+| `keepOriginalObject`    | `boolean`                                                                                                                    |    :x:    | If you wish to preserve the source object. Default behavior is to delete.     |
+| `copyOptions`           | [CopyObjectRequest](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-s3/modules/copyobjectrequest.html) |    :x:    | If you wish to preserve the source object. Default behavior is to delete.     |
 
 ## Move Object Result
 

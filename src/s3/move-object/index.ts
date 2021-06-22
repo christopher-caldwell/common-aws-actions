@@ -7,8 +7,14 @@ const generateDeleteParams = (bucketName: string, fileName: string): DeleteObjec
   Bucket: bucketName,
 })
 
-const generateCopyParams = (bucketName: string, originalKeyName: string, newKeyName: string): CopyObjectRequest => {
+const generateCopyParams = (
+  bucketName: string,
+  originalKeyName: string,
+  newKeyName: string,
+  copyOptions?: CopyObjectRequest
+): CopyObjectRequest => {
   const params = {
+    ...copyOptions,
     Bucket: bucketName,
     CopySource: bucketName + '/' + originalKeyName,
     Key: newKeyName,
@@ -29,10 +35,15 @@ export const moveObject = async (
   sourceBucketName: string,
   originalKeyName: string,
   newKeyName: string,
-  { destinationBucketName, keepOriginalObject = false }: MoveObjectOptions = {}
+  { destinationBucketName, keepOriginalObject = false, copyOptions }: MoveObjectOptions = {}
 ): Promise<MoveObjectResult> => {
   const deleteParams = generateDeleteParams(sourceBucketName, originalKeyName)
-  const copyParams = generateCopyParams(destinationBucketName || sourceBucketName, originalKeyName, newKeyName)
+  const copyParams = generateCopyParams(
+    destinationBucketName || sourceBucketName,
+    originalKeyName,
+    newKeyName,
+    copyOptions
+  )
   try {
     await S3Client.copyObject(copyParams).promise()
     if (!keepOriginalObject) await S3Client.deleteObject(deleteParams).promise()
@@ -52,6 +63,11 @@ interface MoveObjectOptions {
    * @default false
    */
   keepOriginalObject?: boolean
+  /** Additional options sent to the copy request.
+   *
+   * The only properties not customizable with this option are `Bucket`, `CopySource` and `Key`
+   */
+  copyOptions?: CopyObjectRequest
 }
 
 interface MoveObjectResult {

@@ -5,7 +5,7 @@ import { S3client } from '../shared'
 /**
  * Fetches the metadata for an object in a given S3 bucket. If second argument present, will return only the size of the object requested
  */
-const getObjectMetadata = async (
+export const getObjectMetadata = async (
   params: HeadObjectRequest,
   shouldReturnSize?: boolean
 ): Promise<HeadObjectOutput | number> => {
@@ -15,5 +15,3 @@ const getObjectMetadata = async (
 }
 
 export { HeadObjectRequest }
-
-export default getObjectMetadata

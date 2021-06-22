@@ -7,7 +7,7 @@ Gets the metadata of an object stored in an S3 bucket
 ## Usage
 
 ```ts
-import { getObjectMetadata, HeadObjectRequest } from '@caldwell619/common-aws-actions/dist/s3/get-metadata'
+import { getObjectMetadata, HeadObjectRequest } from '@caldwell619/common-aws-actions'
 
 const params: HeadObjectRequest = {
   Bucket: '',

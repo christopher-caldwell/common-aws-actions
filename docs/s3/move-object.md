@@ -2,7 +2,7 @@
 
 # Move Object
 
-Moves ( re-names ) an object inside of an S3 bucket and returns the new key.
+Moves ( re-names ) an object inside of an S3 bucket and returns the new key. Returns [MoveObjectResult][#move-object-result]
 
 ## Usage
 
@@ -27,3 +27,16 @@ await moveObject('my-awesome-bucket', 'pending/file.csv', 'success/file.csv')
 | ----------------------- | --------- | :-------: | ----------------------------------------------------------------------------- |
 | `destinationBucketName` | `string`  |    :x:    | If you are moving objects across buckets, provide the destination bucket name |
 | `keepOriginalObject`    | `boolean` |    :x:    | If you wish to preserve the source object. Default behavior is to delete.     |
+
+## Move Object Result
+
+This is the structure returned from `moveObject`
+
+```ts
+interface MoveObjectResult {
+  /** The URL of the new object */
+  s3Url: string
+  /** The key within the bucket. This is he key the caller provides, and is returned for convenience */
+  newKey: string
+}
+```

@@ -16,6 +16,10 @@ const generateCopyParams = (bucketName: string, originalKeyName: string, newKeyN
   return params
 }
 
+const generateObjectUrl = (bucketName: string, key: string): string => {
+  return `https://${bucketName}.s3.amazonaws.com/${key}`
+}
+
 /** Rename an object inside the sae bucket. Useful for moving objects.
  * Although S3 does not technically have the concept of folders, this can change the key names to simulate the moving of objects.
  *
@@ -26,14 +30,19 @@ export const moveObject = async (
   originalKeyName: string,
   newKeyName: string,
   { destinationBucketName, keepOriginalObject = false }: MoveObjectOptions = {}
-): Promise<void> => {
+): Promise<MoveObjectResult> => {
   const deleteParams = generateDeleteParams(sourceBucketName, originalKeyName)
   const copyParams = generateCopyParams(destinationBucketName || sourceBucketName, originalKeyName, newKeyName)
   try {
     await S3Client.copyObject(copyParams).promise()
     if (!keepOriginalObject) await S3Client.deleteObject(deleteParams).promise()
+    return {
+      s3Url: generateObjectUrl(destinationBucketName || sourceBucketName, newKeyName),
+      newKey: newKeyName,
+    }
   } catch (error) {
     console.error('Error caught while moving object in S3', error)
+    throw error
   }
 }
 
@@ -43,4 +52,11 @@ interface MoveObjectOptions {
    * @default false
    */
   keepOriginalObject?: boolean
+}
+
+interface MoveObjectResult {
+  /** The URL of the new object */
+  s3Url: string
+  /** The key within the bucket. This is he key the caller provides, and is returned for convenience */
+  newKey: string
 }
